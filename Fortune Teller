@@ -1,0 +1,93 @@
+import java.util.Scanner;
+
+public class FortuneTeller {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String firstName;
+        String lastName;
+        int age;
+        int birthMonth;
+        String ROYGBIV;
+        String favoriteColor;
+        int numberSiblings;
+        int retirementYears;
+        String vacationHome;
+        String transportation;
+        double bankBalance;
+        System.out.println("What is your first name?");
+        firstName = input.next();
+        System.out.println("What is your last name?");
+        lastName = input.next();
+        System.out.println("How old are you?");
+        age = input.nextInt();
+
+        retirementYears = input.nextInt();
+        if (age >= 30) {
+            retirementYears = 30;
+        } else if (age < 30) {
+            retirementYears = 40;
+        }
+        System.out.println("what is your birth month(MM)?");
+        birthMonth = input.nextInt();
+        bankBalance = input.nextDouble();
+
+        if (birthMonth >= 1 && birthMonth <= 4) {
+            bankBalance = 156752.30;
+        } else if (birthMonth >= 5 && birthMonth <= 8) {
+            bankBalance = 960.87;
+        } else if (birthMonth >= 9 && birthMonth <= 12) {
+            bankBalance = 4826715.98;
+        } else if (birthMonth <= 0 && birthMonth >= 13) {
+            bankBalance = 0.00;
+        }
+
+        System.out.println("What is your favorite ROYGBIV color?");
+        favoriteColor = input.next();
+        String red = input.next();
+        String blue = input.next();
+        String green = input.next();
+        String orange = input.next();
+        String yellow = input.next();
+        String indigo = input.next();
+        String violet = input.next();
+        transportation = input.next();
+
+        if (favoriteColor == red) {
+            transportation = "Ford Mustang Shelby GT500";
+        } else if (favoriteColor == blue) {
+            transportation = "McLauren 720s";
+        } else if (favoriteColor == green) {
+            transportation = "Mini Cooper";
+        } else if (favoriteColor == orange) {
+            transportation = "Tesla Model X";
+        } else if (favoriteColor == yellow) {
+            transportation = "Lamborghini Aventador";
+        } else if (favoriteColor == indigo) {
+            transportation = "Audi R8 V10 Plus";
+        } else if (favoriteColor == violet) {
+            transportation = "Dodge Challenger Hellcat";
+            {
+            }
+        }
+        System.out.println("How many sibiling do you have?");
+        numberSiblings = input.nextInt();
+        vacationHome = input.next(String.valueOf(numberSiblings));
+
+        if (numberSiblings == 0) {
+            vacationHome = "San Diego, CA";
+        } else if (numberSiblings == 1) {
+            vacationHome = "Miami, FL";
+        } else if (numberSiblings == 2) {
+            vacationHome = "San Juan, Puerto Rico";
+        } else if (numberSiblings == 3) {
+            vacationHome = "Madrid, Spain";
+        } else if (numberSiblings > 3) {
+            vacationHome = "Paris, France";
+        } else if (numberSiblings < 0) {
+            vacationHome = "Moon";
+        }
+
+
+        System.out.println(firstName + " " + lastName + " will retire in " + retirementYears + " years with $" + bankBalance + " in the bank, a vacation home in " + vacationHome + ", and travel by " + transportation);
+    }
+}
